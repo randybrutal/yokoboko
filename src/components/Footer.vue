@@ -7,24 +7,24 @@
                     alt=""
                     width="100"
                 )
-                div.logo-text 傷心欲絕真的很難聽
+                div.logo-text what u see what u get
             div.icon-frame
-                v-icon(
-                    name="brands/facebook"
-                    scale="2"
-                )
-                v-icon(
-                    name="brands/instagram"
-                    scale="2"
-                )
-                v-icon(
-                    name="brands/behance-square"
-                    scale="2"
-                )
-                v-icon(
-                    name="brands/vimeo"
-                    scale="2"
-                )
+                //- v-icon(
+                //-     name="brands/facebook"
+                //-     scale="2"
+                //- )
+                //- v-icon(
+                //-     name="brands/instagram"
+                //-     scale="2"
+                //- )
+                //- v-icon(
+                //-     name="brands/behance-square"
+                //-     scale="2"
+                //- )
+                //- v-icon(
+                //-     name="brands/vimeo"
+                //-     scale="2"
+                //- )
         .copyright
             span © 2021 copyright. 一本
 </template>
