@@ -1,7 +1,13 @@
-[*.{js,jsx,ts,tsx,vue}]
-indent_style = space
-indent_size = 2
+# 是否為最頂的  EditorConfig 文件
+root = true
+# unix-style 換行符號
+[*]
 end_of_line = lf
-trim_trailing_whitespace = true
 insert_final_newline = true
-max_line_length = 100
+# 預設編碼
+charset = utf-8
+# 縮排空格及風格
+indent_size = 4
+indent_style = space
+# 移除換行符號前的空白
+trim_trailing_whitespace = true
