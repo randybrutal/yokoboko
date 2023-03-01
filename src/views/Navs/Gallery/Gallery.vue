@@ -1,4 +1,5 @@
 <template lang="pug">
+div.gallery-wrap
     div.gallery
         .image-grid(v-for="item in rawData.photoset")
             .image-wrap(:style="{ 'background-image': 'url(' + item.primary_photo_extras.url_m + ')' }")
@@ -28,9 +29,29 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { getAlbum } from '@/api';
 
+interface primaryPhotoExtras {
+    url_m: string;
+}
+
+interface title {
+    _content: string;
+}
+
+interface photoSet {
+    primary_photo_extras: primaryPhotoExtras;
+    title: title;
+    id: string;
+}
+
+interface rawData {
+    photoset: photoSet[]
+}
+
 @Component
 export default class Gallery extends Vue {
-    protected rawData = {};
+    public rawData: rawData = {
+        photoset: []
+    };
 
     protected created() {
         this.getAlbumGo();
@@ -45,7 +66,7 @@ export default class Gallery extends Vue {
         }
     }
 
-    protected goToAlbum(id: string) {
+    public goToAlbum(id: string) {
         this.$router.push({
             name: 'Album',
             query: {
@@ -56,7 +77,10 @@ export default class Gallery extends Vue {
 }
 </script>
 <style scoped lang="scss">
-    .gallery :deep{
+    .gallery-wrap {
+        height: 100%;
+    }
+    :deep(.gallery){
         width: 80%;
         height: 100%;
         margin: 0 auto;

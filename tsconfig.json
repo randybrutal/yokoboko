@@ -36,5 +36,14 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "extensions": [
+    ".vue"
+  ],
+  "vueCompilerOptions": {
+    "target": 2.7,
+    "plugins": [
+        "@volar/vue-language-plugin-pug"
+      ]
+  },
 }

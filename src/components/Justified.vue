@@ -1,29 +1,29 @@
 <template lang="pug">
-    div.justified-frame
-        vue-justified-layout(
-            :items="imgData"
-            v-slot="{item, style, index}"
-            :options="{boxSpacing: 2}"
+div.justified-frame
+    vue-justified-layout(
+        :items="imgData"
+        v-slot="{item, style, index}"
+        :options="{boxSpacing: 2}"
+    )
+        img.hover-link(
+            :src="item.src"
+            width="100%"
+            @click="imageClick(item.id, item.src)"
         )
-            img.hover-link(
-                :src="item.src"
+    vs-dialog(
+        blur
+        square
+        not-close
+        auto-width
+        not-padding
+        v-model="activePop"
+    )
+        div.con-image
+            img(
+                :src="imgSrc"
+                alt=""
                 width="100%"
-                @click="imageClick(item.id, item.src)"
             )
-        vs-dialog(
-            blur
-            square
-            not-close
-            auto-width
-            not-padding
-            v-model="activePop"
-        )
-            div.con-image
-                img(
-                    :src="imgSrc"
-                    alt=""
-                    width="100%"
-                )
 </template>
 
 <script lang="ts">
@@ -89,7 +89,7 @@ export default class Justified extends Vue {
     }
 }
 </script>
-<style scoped lang="scss" scoped>
+<style lang="scss" scoped>
     .justified-frame{
         width: 80%;
         margin: 0 auto;
@@ -100,7 +100,7 @@ export default class Justified extends Vue {
             cursor: pointer;
         }
     }
-    .vs-dialog-content :deep{
+    :deep(.vs-dialog-content) {
         .vs-dialog {
             background: none;
         }

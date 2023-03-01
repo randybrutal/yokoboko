@@ -1,4 +1,5 @@
 <template lang="pug">
+div
     div.navbar
         vs-navbar(
             v-model="active"
@@ -10,6 +11,7 @@
                     alt=""
                     width="100"
                 )
+                TimeShow
             vs-navbar-item(
                 :active="active == 'Home'"
                 id="Home"
@@ -24,13 +26,27 @@
                 router-link.router-link-style(
                     to="/Gallery"
                 ) Gallery
+            vs-navbar-item(
+                id="Water"
+            )
+                a.router-link-style(
+                    target="blank"
+                    href="https://watertank.fly.dev/"
+                ) 水庫資訊
 </template>
 
 <script lang="ts">
 // @ is an alias to /src
 import { Component, Vue, Watch } from 'vue-property-decorator';
+import TimeShow from '@/components/TimeShow.vue';
 
-@Component
+@Component({
+    components: {
+        TimeShow
+        // Sidebar,
+        // AppMain
+    }
+})
 export default class Navbar extends Vue {
     protected active = 'Home';
 
@@ -45,7 +61,7 @@ export default class Navbar extends Vue {
 }
 </script>
 <style scoped lang="scss">
-    .navbar :deep{
+    :deep(.navbar){
         position: relative;
         height: 90px;
         margin-bottom: 20px;

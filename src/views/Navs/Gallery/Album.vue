@@ -1,4 +1,5 @@
 <template lang="pug">
+div
     div.album
         transition(
             name="fade-transform"
@@ -89,7 +90,7 @@ export default class Album extends Vue {
 }
 </script>
 <style scoped lang="scss">
-    .album :deep{
+    :deep(.album){
         // width: 100%;
         // height: 100%;
         overflow: auto;

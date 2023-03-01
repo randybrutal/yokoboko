@@ -1,4 +1,5 @@
 <template lang="pug">
+div
     div.home
         //- video.video-style(
         //-     v-if="streamData"
@@ -74,7 +75,7 @@ export default class Home extends Vue {
 }
 </script>
 <style scoped lang="scss">
-    .home :deep{
+    :deep(.home){
         width: 100%;
         // max-height: 675px;
         // height: 200px;

@@ -1,4 +1,5 @@
 <template lang="pug">
+div
     div.headerbar
 </template>
 
@@ -21,7 +22,7 @@ export default class HeaderBar extends Vue {
 }
 </script>
 <style scoped lang="scss">
-    .headerbar :deep{
+    :deep(.headerbar) {
         width: 100%;
         // max-height: 675px;
         // height: 200px;

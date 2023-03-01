@@ -14,12 +14,14 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 import Navbar from '@/components/Navbar.vue';
 import HeaderBar from '@/components/HeaderBar.vue';
 import Footer from '@/components/Footer.vue';
+import TimeShow from '@/components/TimeShow.vue';
 
 @Component({
     components: {
         Navbar,
         HeaderBar,
-        Footer
+        Footer,
+        TimeShow
         // Sidebar,
         // AppMain
     }
